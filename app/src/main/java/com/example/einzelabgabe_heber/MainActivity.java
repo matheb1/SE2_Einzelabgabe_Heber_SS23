@@ -52,7 +52,7 @@ public class MainActivity extends AppCompatActivity {
         button2.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                editText = (EditText) findViewById(R.id.editText);
+                editText = findViewById(R.id.editText);
                 String input = editText.getText().toString();
                 String output = calculate(input);
                 textView2.setText(output);
@@ -60,9 +60,45 @@ public class MainActivity extends AppCompatActivity {
         });
     }
 
+    /* 11739932%7 = 1
+    * Alternierende	Quersumme	bilden	und	ausgeben,	ob
+        diese	gerade	oder	ungerade	ist
+        *
+        *
+        * Bei einer alternatierenden Quersumme werden die einzelnen Ziffern einer Zahl hintereinander abwechselnd subtrahiert und addiert.
+        * Dabei darf von vorne oder hinten begonnen werden.
+        *
+        * in meinem Beispiel wird von hinten begonnen
+    */
+
     public String calculate(String s) {
 
-        return null;
+        int number = Integer.parseInt(s);
+        int sum = 0;
+        int digit;
+        int i = 0;
+        String response;
+
+        while(number != 0) {
+            digit = number % 10;
+            if (i == 0) {
+                sum = digit;
+            } else if (i % 2 == 1) {
+                sum += digit;
+            } else {
+                sum -= digit;
+            }
+            number = number / 10;
+            i++;
+        }
+
+        if (sum % 2 == 0) {
+            response = "Die alternierende Quersumme ist gerade (Summe: " + sum + ")";
+        } else {
+            response = "Die alternierende Quersumme ist ungerade (Summe: " + sum + ")";
+        }
+
+        return response;
 
     }
 }
