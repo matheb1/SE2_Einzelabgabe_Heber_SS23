@@ -1,3 +1,8 @@
 <resources>
     <string name="app_name">Einzelabgabe_Heber</string>
+    <string name="my_text">Gib eine Matrikelnummer ein:</string>
+    <string name="my_input">"Enter Number</string>
+    <string name="my_button">Senden</string>
+    <string name="my_button2">Rechnen</string>
+    <string name="my_output">Ausgabe wird hier generiert</string>
 </resources>

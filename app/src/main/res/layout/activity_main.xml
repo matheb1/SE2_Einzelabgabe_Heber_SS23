@@ -1,10 +1,12 @@
 <?xml version="1.0" encoding="utf-8"?>
+
 <androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context=".MainActivity">
+
 
     <TextView
         android:layout_width="wrap_content"
@@ -13,7 +15,7 @@
         android:layout_marginTop="42dp"
         android:layout_marginEnd="39dp"
         android:layout_marginBottom="639dp"
-        android:text="Gib eine Matrikelnummer ein:"
+        android:text="@string/my_text"
         android:textSize="24sp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
@@ -30,7 +32,8 @@
         android:layout_marginTop="119dp"
         android:layout_marginEnd="46dp"
         android:layout_marginBottom="566dp"
-        android:hint="Enter number"
+        android:hint="@string/my_input"
+        android:autofillHints=""
         android:inputType="number"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
@@ -45,7 +48,7 @@
         android:layout_marginTop="344dp"
         android:layout_marginEnd="73dp"
         android:layout_marginBottom="344dp"
-        android:text="Send"
+        android:text="@string/my_button"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
@@ -59,7 +62,7 @@
         android:layout_marginTop="198dp"
         android:layout_marginEnd="18dp"
         android:layout_marginBottom="450dp"
-        android:text="Output will appear here"
+        android:text="@string/my_output"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
@@ -73,7 +76,7 @@
         android:layout_marginTop="491dp"
         android:layout_marginEnd="16dp"
         android:layout_marginBottom="157dp"
-        android:text="Output will appear here"
+        android:text="@string/my_output"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
@@ -87,7 +90,7 @@
         android:layout_marginTop="610dp"
         android:layout_marginEnd="71dp"
         android:layout_marginBottom="58dp"
-        android:text="send exercise 2"
+        android:text="@string/my_button2"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
