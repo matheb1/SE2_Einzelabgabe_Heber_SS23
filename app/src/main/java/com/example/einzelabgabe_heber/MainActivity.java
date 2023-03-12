@@ -10,8 +10,13 @@ import android.widget.TextView;
 
 public class MainActivity extends AppCompatActivity {
 
-    EditText editText;
-    TextView textView;
+    private EditText editText;
+    private TextView textView;
+    private Button button;
+    private TextView textView2;
+    private Button button2;
+
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -21,14 +26,6 @@ public class MainActivity extends AppCompatActivity {
         editText = findViewById(R.id.editText);
         textView = findViewById(R.id.textView);
 
-        Button button = findViewById(R.id.button);
-        button.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                String input = editText.getText().toString();
-                new TcpClient().execute(input);
-            }
-        });
 
     }
 }
