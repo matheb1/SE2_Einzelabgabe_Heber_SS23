@@ -26,6 +26,7 @@ public class MainActivity extends AppCompatActivity {
             @Override
             public void onClick(View view) {
                 String input = editText.getText().toString();
+                new TcpClient().execute(input);
             }
         });
 

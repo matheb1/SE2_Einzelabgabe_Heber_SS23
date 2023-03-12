@@ -9,7 +9,7 @@ public class TcpClient {
     public static final int SERVER_PORT		= 53212;
     public static final String SERVER_STRING = "se2-isys.aau.at";
 
-    private String doInBackground(String... strings){
+    protected String execute(String... strings) {
 
         String message = strings[0];
         String response = null;
