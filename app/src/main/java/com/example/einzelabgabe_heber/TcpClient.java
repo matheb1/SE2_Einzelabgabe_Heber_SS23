@@ -13,7 +13,11 @@ public class TcpClient {
     public static final String SERVER_STRING = "se2-isys.aau.at";
 
     public static void main(String[] args) throws IOException {
-        BufferedReader is = new BufferedReader(new InputStreamReader(System.in));
+        String sent;
+
+        String modified;
+
+        BufferedReader is_User = new BufferedReader(new InputStreamReader(System.in));
 
         Socket clientSocket = new Socket(SERVER_STRING, SERVER_PORT);
 
@@ -21,11 +25,11 @@ public class TcpClient {
 
         BufferedReader is_Server = new BufferedReader(new InputStreamReader(clientSocket.getInputStream()));
 
-        String sent = is.readLine();
+        sent = is_User.readLine();
 
         os.writeBytes(sent + '\n');
 
-        String modified = is_Server.readLine();
+        modified = is_Server.readLine();
 
         System.out.println("Response from the Server:" + modified);
 

@@ -8,7 +8,9 @@ import android.widget.Button;
 import android.widget.EditText;
 import android.widget.TextView;
 
-import java.io.IOException;
+import java.util.ArrayList;
+import java.util.Collections;
+
 
 public class MainActivity extends AppCompatActivity {
 
@@ -25,7 +27,6 @@ public class MainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
-        editText = findViewById(R.id.editText);
         textView = findViewById(R.id.textView);
         button = findViewById(R.id.button);
         textView2 = findViewById(R.id.textView2);
@@ -36,18 +37,32 @@ public class MainActivity extends AppCompatActivity {
             public void onClick(View view) {
                 editText = findViewById(R.id.editText);
                 String input = editText.getText().toString();
-                EBThread thread = new EBThread(input);
-                thread.start();
+                EBThread t = new EBThread(input);
+                t.start();
                 try {
-                    thread.join();
-                    textView.setText(thread.getResponse());
+                    t.join();
+                    textView.setText(t.getResponse());
                 } catch (InterruptedException e) {
-                    e.printStackTrace();
+                    textView.setText("Error");
                 }
 
             }
         });
 
+        button2.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                editText = (EditText) findViewById(R.id.editText);
+                String input = editText.getText().toString();
+                String output = calculate(input);
+                textView2.setText(output);
+            }
+        });
+    }
+
+    public String calculate(String s) {
+
+        return null;
 
     }
 }

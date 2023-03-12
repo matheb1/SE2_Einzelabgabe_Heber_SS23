@@ -12,8 +12,8 @@ public class EBThread extends Thread{
 
     public static final int SERVER_PORT		= 53212;
     public static final String SERVER_STRING = "se2-isys.aau.at";
-    String input;
-    String response;
+    public String input;
+    public String response;
 
     public EBThread(String input) {
         this.input = input;
