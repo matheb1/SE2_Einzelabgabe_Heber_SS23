@@ -8,8 +8,6 @@ import android.widget.Button;
 import android.widget.EditText;
 import android.widget.TextView;
 
-import java.util.ArrayList;
-import java.util.Collections;
 
 
 public class MainActivity extends AppCompatActivity {
@@ -22,6 +20,8 @@ public class MainActivity extends AppCompatActivity {
 
 
 
+
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -31,6 +31,11 @@ public class MainActivity extends AppCompatActivity {
         button = findViewById(R.id.button);
         textView2 = findViewById(R.id.textView2);
         button2 = findViewById(R.id.button2);
+
+        /* Nimmt die angegebene Matrikelnummer aus dem editText speichert es in den String input und created einen EBThread mit dem
+        übergebenen Input.
+        mit start() wird der Thread gestartet. Mit join wird auf das Ende des threads gewartet sonst eine Error geschickt.
+         */
 
         button.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -48,6 +53,12 @@ public class MainActivity extends AppCompatActivity {
 
             }
         });
+
+        /*
+        Button für aufgabe 2.2
+        speichert wieder den Wert vom eingabefeld als input und im Ausgabefeld wird die funktion calculate aufgerufen,
+        die einen String zurückgibt und diesen dann ins zweite textView speichert.
+         */
 
         button2.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -71,8 +82,19 @@ public class MainActivity extends AppCompatActivity {
         * in meinem Beispiel wird von hinten begonnen
     */
 
+
+    /*
+    Funktion zur ermittlung von der alternierenden Quersumme
+     */
     public String calculate(String s) {
 
+        /*
+        Übergebener String wird in eine Zahl geparsed.
+        Summe für das abspeichern der Zwischensumme
+        Digit für die Ermittlung der einzelnen Zahlen
+        i als count um abwechselnt + und - rechnen zu können
+        Response als Antwort String
+         */
         int number = Integer.parseInt(s);
         int sum = 0;
         int digit;
