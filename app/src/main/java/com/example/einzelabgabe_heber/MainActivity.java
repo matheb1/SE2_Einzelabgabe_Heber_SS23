@@ -8,6 +8,8 @@ import android.widget.Button;
 import android.widget.EditText;
 import android.widget.TextView;
 
+import java.io.IOException;
+
 public class MainActivity extends AppCompatActivity {
 
     private EditText editText;
@@ -32,6 +34,16 @@ public class MainActivity extends AppCompatActivity {
         button.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
+                editText = findViewById(R.id.editText);
+                String input = editText.getText().toString();
+                EBThread thread = new EBThread(input);
+                thread.start();
+                try {
+                    thread.join();
+                    textView.setText(thread.getResponse());
+                } catch (InterruptedException e) {
+                    e.printStackTrace();
+                }
 
             }
         });
